@@ -1,0 +1,27 @@
+app - применение подстановки к терму
+extend - расширение одной парой
+compose - копозици двух подствновок
+occursCheck s - True-> во всеъ подтермах терма переменная с именем s не встречается
+unify term1 term2 - отдает Just s - если есть подстановка s, что s(term1) = s(term2)
+					или отдает nothins 
+
+Rule (head::term, body::[term])
+
+ruleInstance i - каждого var x (входящего и в head и в body) -> var i#x
+
+data Program = Program {rules :: [Rule], goals :: [Term], objectiveVars :: [String]} deriving (Eq, Show)
+
+machineStep - у нас есть подставновка, набор правил вывода и набор тагетных термов, 
+	если тагетных термов не осталось, значит мы все вывели
+	если осталось - то пробуем унифицировать посылку правил с тагетами, если получилось - дописываем body првила к тагетным термам
+
+	+ свертка по подулю лимита
+
+
+
+{
+	maybe :: b -> (a -> b) -> Maybe a -> b
+	maybe default f a 
+}
+
+
